@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="election"
+            type="com.deevvdd.politicalpreparedness.domain.model.response.Election" />
+
+        <variable
+            name="vm"
+            type="com.deevvdd.politicalpreparedness.features.election.ElectionViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/tvElectionName"
+            style="@style/App.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_16"
+            android:text="@{election.name}"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Title of election" />
+
+        <TextView
+            android:id="@+id/tvElectionDay"
+            style="@style/App.Description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/spacing_16"
+            android:text="@{election.electionDay}"
+            android:textColor="@color/gray50"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvElectionName"
+            tools:text="2025-06-06" />
+
+
+        <TextView
+            android:id="@+id/tvElectionInformationTitle"
+            style="@style/App.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_16"
+            android:paddingHorizontal="@dimen/spacing_16"
+            android:text="@string/text_election_informations"
+            android:visibility="@{vm.voterInfo!=null   ? View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvElectionDay" />
+
+
+        <TextView
+            android:id="@+id/tvVotingLocation"
+            style="@style/App.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:onClick="@{view->vm.openBrowser(vm.votingLocationUrl)}"
+            android:paddingHorizontal="@dimen/spacing_16"
+            android:paddingVertical="@dimen/spacing_16"
+            android:text="@string/text_voting_location"
+            android:visibility="@{vm.votingLocationUrl!=null?View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvElectionInformationTitle" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_16"
+            android:layout_marginEnd="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/text_open_votingLocation"
+            android:onClick="@{view->vm.openBrowser(vm.votingLocationUrl)}"
+            android:padding="@dimen/padding_8"
+            android:src="@drawable/baseline_arrow_forward_ios_24"
+            android:visibility="@{vm.votingLocationUrl!=null?View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@id/tvVotingLocation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/colorAccent"
+            app:layout_constraintTop_toTopOf="@id/tvVotingLocation"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tvBallotInformation"
+            style="@style/App.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:onClick="@{view->vm.openBrowser(vm.ballotInformationUrl)}"
+            android:paddingHorizontal="@dimen/spacing_16"
+            android:paddingVertical="@dimen/spacing_16"
+            android:text="@string/text_ballot_information"
+            android:visibility="@{vm.ballotInformationUrl!=null?View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvVotingLocation" />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:tint="@color/colorAccent"
+            android:contentDescription="@string/text_open_ballot_url"
+            android:layout_marginHorizontal="@dimen/spacing_16"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{view->vm.openBrowser(vm.ballotInformationUrl)}"
+            android:padding="@dimen/padding_8"
+            android:src="@drawable/baseline_arrow_forward_ios_24"
+            android:visibility="@{vm.ballotInformationUrl!=null?View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="@id/tvBallotInformation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvBallotInformation" />
+
+
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:alpha="0.2"
+            android:background="@color/gray50"
+            android:visibility="@{vm.correspondingAddress!=null?View.VISIBLE : View.GONE}"
+            app:layout_constraintTop_toBottomOf="@id/tvBallotInformation" />
+
+
+        <TextView
+            android:id="@+id/tvCorrespondingAddressTitle"
+            style="@style/App.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:paddingHorizontal="@dimen/spacing_16"
+            android:paddingVertical="@dimen/spacing_8"
+            android:text="@string/text_corresponding_address"
+            android:visibility="@{vm.correspondingAddress!=null?View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewLine"
+            tools:text="Corresponding address" />
+
+
+        <TextView
+            android:id="@+id/tvCorrespondingAddress"
+            style="@style/App.Description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:paddingHorizontal="@dimen/spacing_16"
+            android:paddingVertical="@dimen/spacing_8"
+            android:text="@{vm.correspondingAddress}"
+            android:visibility="@{vm.correspondingAddress!=null?View.VISIBLE : View.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvCorrespondingAddressTitle"
+            tools:text="address" />
+
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/App.Button"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/spacing_16"
+            android:onClick="@{view->vm.toggleFollowElection()}"
+            android:text="@{vm.isExitOnSavedElections ?  @string/unfollow_election : @string/follow_election}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{vm.loading ? View.VISIBLE : View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

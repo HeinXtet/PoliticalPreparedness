@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.deevvdd.politicalpreparedness.features.launch.LaunchViewModel" />
+    </data>
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        app:layoutDescription="@xml/launch_screen_scene"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ballot_logo"
+            app:layout_constraintBottom_toTopOf="@id/btnUpComing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnUpComing"
+            style="@style/App.Button"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/spacing_16"
+            android:onClick="@{view->vm.goToElection()}"
+            android:text="@string/upcoming_elections"
+            app:layout_constraintBottom_toTopOf="@id/btnRepresentatives"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRepresentatives"
+            style="@style/App.Button"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/spacing_16"
+            android:onClick="@{view->vm.goToFindMyRepresentative()}"
+            android:text="@string/find_my_representative"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>

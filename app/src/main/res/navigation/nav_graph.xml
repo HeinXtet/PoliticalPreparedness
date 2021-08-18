@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/electionCategoryFragment">
+
+    <fragment
+        android:id="@+id/electionCategoryFragment"
+        android:name="com.deevvdd.politicalpreparedness.features.launch.LaunchFragment"
+        android:label="ElectionCategoryFragment"
+        tools:layout="@layout/fragment_election_category">
+        <action
+            android:id="@+id/action_electionCategoryFragment_to_electionFragment"
+            app:destination="@id/electionFragment" />
+        <action
+            android:id="@+id/action_electionCategoryFragment_to_representativeFragment"
+            app:destination="@id/representativeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/electionFragment"
+        android:name="com.deevvdd.politicalpreparedness.features.election.ElectionFragment"
+        android:label="@string/upcoming_elections"
+        tools:layout="@layout/fragment_election">
+        <action
+            android:id="@+id/action_electionFragment_to_voterInfoFragment"
+            app:destination="@id/voterInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/voterInfoFragment"
+        android:name="com.deevvdd.politicalpreparedness.features.election.VoterInfoFragment"
+        android:label="@string/election_detail"
+        tools:layout="@layout/fragment_voterinfo">
+        <argument
+            android:name="election"
+            app:argType="com.deevvdd.politicalpreparedness.domain.model.response.Election" />
+    </fragment>
+    <fragment
+        android:id="@+id/representativeFragment"
+        android:name="com.deevvdd.politicalpreparedness.features.representative.RepresentativeFragment"
+        android:label="@string/find_my_representative"
+        tools:layout="@layout/fragment_representative" />
+</navigation>

@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name">PoliticalPreparedness</string>
+
+    <string name="follow">Follow Election</string>
+    <string name="unfollow_election">Unfollow Election</string>
+    <string name="upcoming_elections">Upcoming elections</string>
+    <string name="find_my_representative">Find My Representative</string>
+    <string name="election_detail">Election Details</string>
+    <string name="elections">Elections</string>
+    <string name="use_my_location">Use My Location</string>
+    <string name="representatives">Representatives</string>
+    <string name="search">search</string>
+    <string name="follow_election">Follow Election</string>
+    <string name="saved_elections">Saved Elections</string>
+    <string name="empty_elections">There is no elections.</string>
+    <string name="empty_saved_elections">There is no saved elections</string>
+    <string name="saved_election">Election saved</string>
+    <string name="deleted_election">Deleted election</string>
+    <string name="text_election_informations">Election informations</string>
+    <string name="text_voting_location">Voting Location</string>
+    <string name="text_ballot_information">Ballot Information</string>
+    <string name="text_corresponding_address">Corresponding address</string>
+    <string name="text_open_votingLocation">To open voting loation url</string>
+    <string name="text_open_ballot_url">To open ballot url</string>
+    <string name="search_representative">Search Representative</string>
+    <string name="text_address_line_1">Address Line 1</string>
+    <string name="text_address_line_2">Address Line 2</string>
+    <string name="text_city">City</string>
+    <string name="text_zip_code">Zip Code</string>
+    <string name="text_state">State</string>
+    <string name="text_use_location">Use my Location</string>
+    <string name="text_permission_required">Required Permission</string>
+    <string name="text_permission_required_message">Application need your permission to get your current location.</string>
+    <string name="text_ok">OK</string>
+    <string name="text_cancel">CANCEL</string>
+    <string name="text_fail_to_get_location">Fail to get user current location</string>
+    <string name="route_facebook_image">Open facebook link</string>
+    <string name="route_website_image">Open website</string>
+    <string name="route_twitter_image">Twitter</string>
+    <string name="profile_image">Profile image placeholder</string>
+
+    <string-array name="states">
+        <item>Alabama</item>
+        <item>Alaska</item>
+        <item>American Samoa</item>
+        <item>Arizona</item>
+        <item>Arkansas</item>
+        <item>California</item>
+        <item>Colorado</item>
+        <item>Connecticut</item>
+        <item>Delaware</item>
+        <item>District of Columbia</item>
+        <item>Florida</item>
+        <item>Georgia</item>
+        <item>Guam</item>
+        <item>Hawaii</item>
+        <item>Idaho</item>
+        <item>Illinois</item>
+        <item>Indiana</item>
+        <item>Iowa</item>
+        <item>Kansas</item>
+        <item>Kentucky</item>
+        <item>Louisiana</item>
+        <item>Maine</item>
+        <item>Maryland</item>
+        <item>Massachusetts</item>
+        <item>Michigan</item>
+        <item>Minnesota</item>
+        <item>Mississippi</item>
+        <item>Missouri</item>
+        <item>Montana</item>
+        <item>Nebraska</item>
+        <item>Nevada</item>
+        <item>New Hampshire</item>
+        <item>New Jersey</item>
+        <item>New Mexico</item>
+        <item>New York</item>
+        <item>North Carolina</item>
+        <item>North Dakota</item>
+        <item>Northern Marianas Islands</item>
+        <item>Ohio</item>
+        <item>Oklahoma</item>
+        <item>Oregon</item>
+        <item>Pennsylvania</item>
+        <item>Puerto Rico</item>
+        <item>Rhode Island</item>
+        <item>South Carolina</item>
+        <item>South Dakota</item>
+        <item>Tennessee</item>
+        <item>Texas</item>
+        <item>Utah</item>
+        <item>Vermont</item>
+        <item>Virginia</item>
+        <item>Virgin Islands</item>
+        <item>Washington</item>
+        <item>West Virginia</item>
+        <item>Wisconsin</item>
+        <item>Wyoming</item>
+    </string-array>
+
+</resources>
